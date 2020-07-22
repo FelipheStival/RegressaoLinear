@@ -12,6 +12,7 @@ app.LoadPackages = function()
   require(rmarkdown)
   require(knitr)
   require(pander)
+  require(shinyjs)
   
   
 }
