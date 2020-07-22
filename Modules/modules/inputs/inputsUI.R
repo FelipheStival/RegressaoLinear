@@ -5,19 +5,32 @@ createInputsUI = function(){
   
   sidebarPanel(
     useShinyjs(),
-    tags$b("Data: "),
+    #===================Entrada de dados manual==============================
+    
+    tags$b(INTERFACE_LABEL_DATA),
     hr(),
-    tags$b("Digite: "),
+    tags$b(INTERFACE_INPUT_DIGITAR_MANUAL),
     textInput("x",INPUT_EIXO_X,value = "90, 100, 90, 80, 87, 75"),
     textInput("y",INPUT_EIXO_Y,value = "950, 1100, 850, 750, 950, 775"),
+    
+    #========================================================================
+    
     hr(),
-    tags$b("ou"),
+    tags$b(INTERFACE_LABEL_TIPO_INPUT),
     hr(),
-    fileInput("arquivoUpload","Escolha um arquivo"),
-    radioButtons("radio","Selecione o separador: ",choices = list(";" = ";", "," = ","),selected = ";"),
-    selectInput("arquivoEixoX","Eixo X",choices = NULL),
-    selectInput("arquivoEixoY","Eixo Y",choices = NULL),
-    tags$b("Plot: "),
+    
+    #==================Entrada por upload====================================
+    
+    fileInput("arquivoUpload",INPUT_UPLOAD_ARQUIVO),
+    radioButtons("radio",INPUT_SELECIONAR_SEPARADOR,choices = list(";" = ";", "," = ","),selected = ";"),
+    selectInput("arquivoEixoX",INPUT_EIXO_X,choices = NULL),
+    selectInput("arquivoEixoY",INPUT_EIXO_Y,choices = NULL),
+    
+    #========================================================================
+    
+    #==================Opcoes graficos=======================================
+    
+    tags$b(INTERFACE_LABEL_PLOT),
     checkboxInput("se",INPUT_INTERVALO_CONFIANCA),
     tags$b(MENSAGEM_EIXOS),
     textInput("xlab",NULL),
@@ -30,5 +43,7 @@ createInputsUI = function(){
     checkboxInput("echo",INPUT_SHOW_CODE,FALSE),
     downloadButton("downloadReport"),
   )
+  
+  #==========================================================================
   
 }

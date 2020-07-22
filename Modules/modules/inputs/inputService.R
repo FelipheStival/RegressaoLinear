@@ -31,8 +31,8 @@ inputService = function(input,output,session){
         updateSelectInput(session,"arquivoEixoY",choices = names(dados)) 
       }
     }
+    
   })
-  
   #====================================================
   
 }
