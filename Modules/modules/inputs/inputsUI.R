@@ -4,6 +4,7 @@
 createInputsUI = function(){
   
   sidebarPanel(
+    
     useShinyjs(),
     #===================Entrada de dados manual==============================
     
@@ -41,7 +42,7 @@ createInputsUI = function(){
                  inline = TRUE
     ),
     checkboxInput("echo",INPUT_SHOW_CODE,FALSE),
-    downloadButton("downloadReport"),
+    downloadButton("downloadReport")
   )
   
   #==========================================================================
